@@ -1,17 +1,17 @@
 <template>
   <q-page class="flex flex-center">
-    <div style="padding-top: 100px;">
-      <label style="font-size: 20px;" class="column items-center">VOCÊ ESTÁ ACESSANDO</label>
-      <label style="padding-bottom: 100px; font-size: 20px;" class="column items-center">A SUA CONTA</label>
+    <div>
+      <label style="font-size: 20px; font-family: Shadows Into Light;" class="column items-center">VOCÊ ESTÁ ACESSANDO</label>
+      <label style="padding-bottom: 80px; font-size: 20px; font-family: Shadows Into Light;" class="column items-center">A SUA CONTA</label>
     <section class="login">
      <div class="q-pa-md">
-         <q-input style="text-align: center;" class="margem" rounded outlined color="white" v-model="email" type="email" fill-mask="" label="Enter your e-mail" >
+         <q-input  class="margem" style="opacity: 0.9;" flat rounded borderless input-class="text-center" dark color="white" v-model="email" type="email" fill-mask="" placeholder="Enter your e-mail" >
           <!-- <template v-slot:append>
           <q-icon name="email"
                   color="white" />
         </template> -->
       </q-input>
-      <q-input class="margem" rounded outlined color="white" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="Type your password" >
+      <q-input class="" style="opacity: 0.9;" flat rounded borderless input-class="text-center" dark color="black" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="Type your password" >
         <!-- <template v-slot:append>
           <q-icon
             :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -23,7 +23,7 @@
       </q-input>
         </div>
         <div class=" flex flex-center">
-  <a class="aprenda"><q-icon name="help" size="25px" class=""/> Recover Password</a></div>
+  <a class="aprenda" style="opacity: 0.8;"><q-icon name="help" style="opacity: 0.7;" size="15px" class=""/> Recover Password</a></div>
       <!-- <div class="relative-position q-pa-md">
         <q-btn rounded class="absolute-center" @click="irVerificar()" color="yellow" label="Cadastrar"/>
       </div>
@@ -67,7 +67,7 @@ export default defineComponent({
 
 <style scoped>
       .login{
-        width: 300px;
+        width: 340px;
         height: 250px;
         border-color: transparent;
       }
@@ -78,9 +78,31 @@ export default defineComponent({
       .margem{
           margin-bottom: 30px;
           border-color: yellow;
+          /* border: solid 2px;
+          border-radius: 50px; */
         }
       .aprenda{
         color:white;
       }
+
+      .q-input {
+        border-radius: 50px;
+        border: 1px solid yellow;
+        transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: Raleway, sans-serif;
+        font-size: 14px;
+        min-width: 100px;
+        width: 100%;
+      }
+       .q-field__input {
+          width: 100%;
+          text-align: center;
+          color: #000;
+          min-width: 0;
+          outline: 0 !important;
+          -webkit-user-select: auto;
+          user-select: auto;
+      }
+
 
  </style>

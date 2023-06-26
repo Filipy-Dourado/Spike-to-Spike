@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex flex-center">
     <div>
-      <label style="font-size: 20px;" class="column items-center">RESPEITAMOS A SUA</label>
-      <label style="padding-bottom: 120px; font-size: 20px;" class="column items-center">PRIVACIDADE</label>
+      <label style="font-size: 20px; font-family: Shadows Into Light;" class="column items-center">RESPEITAMOS A SUA</label>
+      <label style="padding-bottom: 120px; font-size: 20px; font-family: Shadows Into Light;" class="column items-center">PRIVACIDADE</label>
     <form action="#" method="get" class="column items-center">
     <fieldset class="login">
      <div class="q-pa-md">

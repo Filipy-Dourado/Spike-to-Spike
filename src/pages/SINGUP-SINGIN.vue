@@ -1,16 +1,13 @@
 <template>
   <q-page class=" column items-center">
-    <div style="padding-top: 170px;">
-      <label style="font-size: 20px;" class="column items-center">ENTRE OU CRIE</label>
-      <label style="padding-bottom: 60px; font-size: 20px;" class="column items-center">A SUA CONTA</label>
+    <div style="padding-top: 220px;">
+      <label style="font-size: 20px; font-family: Shadows Into Light;" class="column items-center">ENTRE OU CRIE</label>
+      <label style="padding-bottom: 80px; font-size: 20px; font-family: Shadows Into Light;" class="column items-center">A SUA CONTA</label>
     <div class="flex flex-center">
        <section class="login">
 <div class="column items-center">
-  <q-btn style="width: 150px;" outline rounded color="white" class="abaixo, margem" @click= "irCadastro() " label="Login"/>
-  <q-btn style="width: 150px;" outline rounded color="white" label="Sing up" class="margem" @click= "irCadastro()"/>
-</div>
-<div class=" flex flex-center">
-  <a class="aprenda"><q-icon name="help" size="25px" class=""/> Aprenda a diferença</a>
+  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" class="abaixo, margem" @click= "irCadastro() " label="Login"/>
+  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" label="Sing up" class="margem" @click= "irCadastro()"/>
 </div>
 </section>
       </div>
