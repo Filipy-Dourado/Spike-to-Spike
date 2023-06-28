@@ -6,8 +6,8 @@
     <div class="flex flex-center">
        <section class="login">
 <div class="column items-center">
-  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" class="margem" @click= "irLoginPrivado() " label="Login"/>
-  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" class="margem" @click= "irCadastroPrivado()" label="Sing up"/>
+  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" class="abaixo, margem" @click= "irLogin() " label="Login"/>
+  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" label="Sing up" class="margem" @click= "irCadastro()"/>
 </div>
 </section>
       </div>
@@ -27,13 +27,13 @@ export default defineComponent({
     }
   },
 
-  name: 'SINGUP-SINGIN',
+  name: 'SINGUP-SINGIN-2',
   methods:{
-    irCadastroPrivado(){
-    this.$router.push('/cadastro-privado')
+    irCadastro(){
+    this.$router.push('/cadastro-email')
  },
- irLoginPrivado(){
-    this.$router.push('/login-privado')
+ irLogin(){
+    this.$router.push('/login-email')
  },
 
  }
@@ -42,6 +42,9 @@ export default defineComponent({
 </script>
 
   <style scoped>
+        .abaixo{
+          display: block;
+        }
         .login{
           width: 250px;
           height: 300px;
@@ -53,7 +56,14 @@ export default defineComponent({
           margin-bottom: 30px;
           border-color: yellow;
         }
+        .margem2{
+          margin-bottom: 30px;
+        }
 
+        .aprenda{
+          color: white;
+          cursor: pointer;
+        }
         .q-btn--outline:before {
         border: 1px solid yellow;
         }

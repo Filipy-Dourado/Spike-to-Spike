@@ -7,13 +7,12 @@
        <section class="login">
 <div class="column items-center">
   <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white"  class="abaixo, margem" @click= "irSingup() " label="Private"/>
-  <q-btn style="width: 150px; text-transform: unset !important; opacity: 0.8; font-family: Raleway, Sans;" outline rounded color="white" label="E-mail" class="margem" @click= "irSingup()"/>
+  <q-btn style="width: 150px; text-transform: unset !important; opacity: 0.8; font-family: Raleway, Sans; margin-bottom: 10px;" outline rounded color="white" @click= "irSingup2()" label="E-mail" />
 </div>
 <div class=" flex flex-center">
-  <a class="aprenda" style="opacity: 0.8;"><q-icon  style="opacity: 0.7;" name="help" size="15px" class=""/> Aprenda a diferença</a>
+  <a class="aprenda" style="opacity: 0.8;"><q-icon  style="opacity: 0.7;" class="fa-regular fa-circle-question" size="15px"/> Aprenda a diferença.</a>
 </div>
 </section>
-
       </div>
     </div>
        </q-page>
@@ -36,8 +35,8 @@ export default defineComponent({
     irSingup(){
     this.$router.push('/singin')
  },
- irPrivado(){
-    this.$router.push('/privado')
+   irSingup2(){
+    this.$router.push('/singin2')
   },
  }
 })

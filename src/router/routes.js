@@ -23,12 +23,14 @@ const routes = [
     component: () => import('layouts/LoginLayout.vue'),
     children: [
       // { path: '', component: () => import('pages/APRESENTAR.vue') },
-      { path: 'login', name:'login', component: () => import('pages/LOGIN.vue') },
-      { path: 'cadastro', name:'cadastro', component: () => import('src/pages/EMAIL.vue') },
-      { path: 'privado', name:'privado', component: () => import('pages/PRIVADO.vue') },
+      { path: 'login-email', name:'login-email', component: () => import('src/pages/LOG-EMAIL.vue') },
+      { path: 'cadastro-email', name:'cadastro-email', component: () => import('src/pages/CAD-EMAIL.vue') },
+      { path: 'cadastro-privado', name:'cadastro-privado', component: () => import('src/pages/CAD-PRIVADO.vue') },
+      { path: 'login-privado', name:'login-privado', component: () => import('src/pages/LOG-PRIVADO.vue') },
       { path: 'verificar', name: ' verificar', component: () => import('pages/VERIFICAREMAIL.vue') },
       // { path: 'chave', name:'chave', component: () => import('pages/CHAVE.vue') },
       { path: 'singin', name: 'singin', component: () => import('pages/SINGUP-SINGIN.vue') },
+      { path: 'singin2', name: 'singin2', component: () => import('src/pages/SINGUP-SINGIN-2.vue') }
 
     ]
   },

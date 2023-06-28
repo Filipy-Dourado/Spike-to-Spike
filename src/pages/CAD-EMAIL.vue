@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div>
-      <label style="font-size: 20px; font-family: Shadows Into Light;" class="column items-center">VOCÊ ESTÁ ACESSANDO</label>
+      <label style="font-size: 20px; font-family: Shadows Into Light;" class="column items-center">VOCÊ ESTÁ CADASTRANDO</label>
       <label style="padding-bottom: 80px; font-size: 20px; font-family: Shadows Into Light;" class="column items-center">A SUA CONTA</label>
     <section class="login">
      <div class="q-pa-md">
@@ -22,8 +22,6 @@
         </template> -->
       </q-input>
         </div>
-        <div class=" flex flex-center">
-  <a class="aprenda" style="opacity: 0.8;"><q-icon name="help" style="opacity: 0.7;" size="15px" class=""/> Recover Password</a></div>
       <!-- <div class="relative-position q-pa-md">
         <q-btn rounded class="absolute-center" @click="irVerificar()" color="yellow" label="Cadastrar"/>
       </div>
@@ -46,7 +44,7 @@ export default defineComponent({
 
   },
 
-  name: 'EMAIL',
+  name: 'CAD-EMAIL',
   methods:{
   irVerificar(){
     this.$router.push('/verificar')
