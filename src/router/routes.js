@@ -29,8 +29,8 @@ const routes = [
       { path: 'login-privado', name:'login-privado', component: () => import('src/pages/LOG-PRIVADO.vue') },
       { path: 'verificar', name: ' verificar', component: () => import('pages/VERIFICAREMAIL.vue') },
       // { path: 'chave', name:'chave', component: () => import('pages/CHAVE.vue') },
-      { path: 'singin', name: 'singin', component: () => import('pages/SINGUP-SINGIN.vue') },
-      { path: 'singin2', name: 'singin2', component: () => import('src/pages/SINGUP-SINGIN-2.vue') }
+      { path: 'singin', name: 'singin', component: () => import('src/pages/SIGNUP-SIGNIN.vue') },
+      { path: 'singin2', name: 'singin2', component: () => import('src/pages/SIGNUP-SIGNIN-2.vue') }
 
     ]
   },

@@ -1,11 +1,11 @@
 <template>
   <q-page class="flex flex-center">
     <div>
-      <label style="font-size: 20px; font-family: Shadows Into Light;" class="column items-center">RESPEITAMOS A SUA</label>
-      <label style="padding-bottom: 80px; font-size: 20px; font-family: Shadows Into Light;" class="column items-center">PRIVACIDADE</label>
+      <label style="font-size: 20px; font-family: The Old English;" class="column items-center">RESPEITAMOS A SUA</label>
+      <label style="padding-bottom: 80px; font-size: 20px; font-family: The Old English;" class="column items-center">PRIVACIDADE</label>
     <section class="login">
      <div class="q-pa-md">
-      <q-input class="" style="opacity: 0.9;" flat rounded borderless input-class="text-center" dark color="black" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="ejrjow350523mdkkt" >
+      <q-input class="" rounded borderless input-class="text-center" inp color="black" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" >
         <!-- <template v-slot:append>
           <q-icon
             :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -16,8 +16,12 @@
         </template> -->
       </q-input>
         </div>
+        <div class="relative-position q-pa-md" style="margin-bottom: 10px;">
+           <q-btn style="font-family: 'Times New Roman', Times, serif; font-weight: bold;" rounded class="absolute-center" @click="irVerificar()" color="black" label="Entrar"/>
+         </div>
         <div class=" flex flex-center">
-  <a class="aprenda" style="opacity: 0.8;"><q-icon class="fa-regular fa-circle-question" style="opacity: 0.7;" size="15px"/> Store it somewhere safe.</a></div>
+
+  <a class="aprenda" style="opacity: 0.9;"><q-icon class="fa-regular fa-circle-question" size="15px"/> Store it somewhere safe.</a></div>
       </section>
   </div>
   </q-page>
@@ -67,21 +71,20 @@ export default defineComponent({
       .margem{
           margin-bottom: 30px;
           border-color: yellow;
-          /* border: solid 2px;
-          border-radius: 50px; */
+
         }
       .aprenda{
-        color:white;
+        color:black;
       }
 
       .q-input {
-        border-radius: 50px;
-        border: 1px solid yellow;
-        transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
-        font-family: Raleway, sans-serif;
-        font-size: 14px;
+        border-radius: 20px;
+        border: 2px solid black;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
         min-width: 100px;
-        width: 100%;
+
+
       }
        .q-field__input {
           width: 100%;

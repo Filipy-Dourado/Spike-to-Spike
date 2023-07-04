@@ -1,16 +1,16 @@
 <template>
   <q-page class=" column items-center">
-    <div style="padding-top: 170px;">
-      <label style=" font-size: 20px; font-family: Shadows Into Light;" class="column items-center">COMO VOCÊ DESEJA COMEÇAR</label>
-      <label style=" padding-bottom: 80px; font-size: 20px; font-family: Shadows Into Light;" class="column items-center">A NEGOCIAR P2P?</label>
+    <div style="padding-top: 180px;">
+      <label style=" font-size: 20px; font-family: The Old English" class="column items-center">COMO VOCÊ DESEJA COMEÇAR</label>
+      <label style=" padding-bottom: 80px; font-size: 20px; font-family: The Old English;" class="column items-center">A NEGOCIAR P2P?</label>
       <div class="flex flex-center">
        <section class="login">
 <div class="column items-center">
-  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white"  class="abaixo, margem" @click= "irSingup() " label="Private"/>
-  <q-btn style="width: 150px; text-transform: unset !important; opacity: 0.8; font-family: Raleway, Sans; margin-bottom: 10px;" outline rounded color="white" @click= "irSingup2()" label="E-mail" />
+  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif !; text-transform: unset !important; " outline color="black"  class="margem" @click= "irSingup() " label="Conta Privada"/>
+  <q-btn style="width: 150px; text-transform: unset !important; font-family: times 'Times New Roman', Times, serif; margin-bottom: 15px;" outline color="black" class="margem" @click= "irSingup2()" label="Conta E-mail" />
 </div>
 <div class=" flex flex-center">
-  <a class="aprenda" style="opacity: 0.8;"><q-icon  style="opacity: 0.7;" class="fa-regular fa-circle-question" size="15px"/> Aprenda a diferença.</a>
+  <a class="aprenda" style="opacity: 0.9;font-size: 15px;"><q-icon  style="opacity: 0.9;" class="fa-regular fa-circle-question" size="20px"/> Aprenda a diferença.</a>
 </div>
 </section>
       </div>
@@ -44,9 +44,7 @@ export default defineComponent({
 </script>
 
   <style scoped>
-        .abaixo{
-          display: block;
-        }
+
         .login{
           width: 250px;
           height: 300px;
@@ -56,19 +54,16 @@ export default defineComponent({
 
         .margem{
           margin-bottom: 30px;
-          border-color: yellow;
-        }
-        .margem2{
-          margin-bottom: 30px;
+          border-radius: 10px;
         }
 
         .aprenda{
-          color: white;
+          color: black;
           cursor: pointer;
           font-size: 11px;
         }
         .q-btn--outline:before {
-        border: 1px solid yellow;
+        border: 2px solid black;
         }
 
 

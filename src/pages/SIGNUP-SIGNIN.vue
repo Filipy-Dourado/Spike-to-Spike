@@ -1,13 +1,13 @@
 <template>
   <q-page class=" column items-center">
-    <div style="padding-top: 220px;">
-      <label style="font-size: 20px; font-family: Shadows Into Light;" class="column items-center">ENTRE OU CRIE</label>
-      <label style="padding-bottom: 80px; font-size: 20px; font-family: Shadows Into Light;" class="column items-center">A SUA CONTA</label>
+    <div style="padding-top: 180px;">
+      <label style="font-size: 20px; font-family: The Old English;" class="column items-center">ENTRE OU CRIE</label>
+      <label style="padding-bottom: 80px; font-size: 20px; font-family: The Old English;" class="column items-center">A SUA CONTA</label>
     <div class="flex flex-center">
        <section class="login">
 <div class="column items-center">
-  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" class="margem" @click= "irLoginPrivado() " label="Login"/>
-  <q-btn style="width: 150px; font-family: Raleway, Sans; text-transform: unset !important; opacity: 0.8;" outline rounded color="white" class="margem" @click= "irCadastroPrivado()" label="Sing up"/>
+  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important;" outline color="black" class="margem" @click= "irCadastroPrivado()" label="Sign Up"/>
+  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important;" outline color="black" class="margem" @click= "irLoginPrivado() " label="Login"/>
 </div>
 </section>
       </div>
@@ -51,10 +51,10 @@ export default defineComponent({
 
         .margem{
           margin-bottom: 30px;
-          border-color: yellow;
+          border-radius: 10px;
         }
 
         .q-btn--outline:before {
-        border: 1px solid yellow;
+        border: 2px solid black;
         }
    </style>

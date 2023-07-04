@@ -31,11 +31,7 @@ export default defineComponent({
 </script>
 <style scoped>
    .layout{
-  background:rgb(233, 147, 17);
-  background: radial-gradient(
-    circle,
-    rgba(233, 147, 17, 1) 0%,
-    rgba(245, 181, 8, 1) 100%
-  );
+   background-color:gold;
+
       }
 </style>
