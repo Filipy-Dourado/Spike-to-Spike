@@ -1,6 +1,7 @@
 <template>
 
-  <q-layout class="layout">
+  <q-layout>
+
       <!-- <q-header elevated>
         <q-toolbar>
           <q-toolbar-title style="position: center">
@@ -30,8 +31,22 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-   .layout{
-   background-color:gold;
 
-      }
+ .q-layout{
+   background-image: url('src/assets/IMG8.jpeg');
+
+   background-position: center;
+   background-repeat: no-repeat;
+     background-size: cover;
+   /* background-attachment: fixed; */
+
+  }
+
+@media(max-width: 500px) and (max-height: 900px){
+  .q-layout{
+   background-image: url('src/assets/IMGm8.jpeg');
+  }
+}
+
+
 </style>

@@ -1,13 +1,13 @@
 <template>
   <q-page class=" column items-center">
-    <div style="padding-top: 180px;">
-      <label style=" font-size: 20px; font-family: The Old English" class="column items-center">COMO VOCÊ DESEJA COMEÇAR</label>
+      <div style="padding-top: 130px;">
+      <label style=" font-size: 20px; font-family: The Old English;" class="column items-center">COMO VOCÊ DESEJA COMEÇAR</label>
       <label style=" padding-bottom: 80px; font-size: 20px; font-family: The Old English;" class="column items-center">A NEGOCIAR P2P?</label>
       <div class="flex flex-center">
        <section class="login">
 <div class="column items-center">
-  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif !; text-transform: unset !important; " outline color="black"  class="margem" @click= "irSingup() " label="Conta Privada"/>
-  <q-btn style="width: 150px; text-transform: unset !important; font-family: times 'Times New Roman', Times, serif; margin-bottom: 15px;" outline color="black" class="margem" @click= "irSingup2()" label="Conta E-mail" />
+  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif !; text-transform: unset !important; color: gold; " outline class="margem" @click= "irSingup() " label="Conta Privada"/>
+  <q-btn style="width: 150px; text-transform: unset !important; font-family: times 'Times New Roman', Times, serif; margin-bottom: 15px; color: gold; " outline class="margem" @click= "irSingup2()" label="Conta E-mail" />
 </div>
 <div class=" flex flex-center">
   <a class="aprenda" style="opacity: 0.9;font-size: 15px;"><q-icon  style="opacity: 0.9;" class="fa-regular fa-circle-question" size="20px"/> Aprenda a diferença.</a>
@@ -58,7 +58,7 @@ export default defineComponent({
         }
 
         .aprenda{
-          color: black;
+          color: gold;
           cursor: pointer;
           font-size: 11px;
         }

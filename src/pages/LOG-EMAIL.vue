@@ -5,19 +5,9 @@
       <label style="padding-bottom: 40px; font-size: 20px; font-family: The Old English;" class="column items-center">EM SUA CONTA</label>
     <section class="login">
      <div class="q-pa-md" style="margin-bottom: 20px;">
-      <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold;" v-model="email" type="email" fill-mask="" placeholder="E-mail" >
-          <template v-slot:append>
-          <q-icon name="person"
-            color="black" />
-        </template>
+      <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold;" v-model="email" type="email" fill-mask="" placeholder="Usuário ou E-mail" >
       </q-input>
-         <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold;" v-model="email" type="email" fill-mask="" placeholder="E-mail" >
-          <template v-slot:append>
-          <q-icon name="email"
-            color="black" />
-        </template>
-      </q-input>
-      <q-input class="" rounded borderless input-style="font-weight: bold;" input-class="text-center" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="Password" >
+      <q-input class="" rounded borderless input-style="font-weight: bold;" input-class="text-center" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="      Password" >
         <template v-slot:append>
           <q-icon
             :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -29,9 +19,10 @@
       </q-input>
         </div>
       <div class="relative-position q-pa-md">
-        <q-btn style="font-family: 'Times New Roman', Times, serif; font-weight: bold;" rounded class="absolute-center" @click="irVerificar()" color="black" label="Entrar"/>
+        <q-btn style="font-family: 'Times New Roman', Times, serif; font-weight: bold;" rounded class="absolute-center" @click="irHome()" color="black" label="Entrar"/>
       </div>
-      <div class=" flex flex-center" style="margin-top: 30px;">
+      <div class=" flex flex-center" style="margin-top: 10px;">
+        <a class="aprenda" style="opacity: 0.9;font-size: 15px;" @click="novaSenha()"><q-icon  style="opacity: 0.9;" class="fa-regular fa-circle-question" size="20px"/> Aprenda a diferença.</a>
         </div>
       </section>
   </div>
@@ -52,8 +43,11 @@ export default defineComponent({
 
   name: 'CAD-EMAIL',
   methods:{
-  irVerificar(){
-    this.$router.push('/verificar')
+  novaSenha(){
+    this.$router.push('/nova-senha')
+  },
+  irHome(){
+    this.$router.replace('/home')
   }
   },
   setup (){
@@ -81,6 +75,12 @@ export default defineComponent({
 
         }
 
+        .aprenda{
+          color: gold;
+          cursor: pointer;
+          font-size: 11px;
+        }
+
       .q-input {
         border-radius: 20px;
         border: 2px solid black;
@@ -100,22 +100,37 @@ export default defineComponent({
       }
 
       .text-white {
-      color: gold !important;
+        color: gold !important;
 }
 
-.q-icon {
-    line-height: 1;
-    width: 1em;
-    height: 1em;
-    flex-shrink: 1;
-    letter-spacing: 20px !important;
-    text-transform: none;
-    white-space: unset;
-    word-wrap: normal;
-    direction: ltr;
-    text-align: center;
-    position: inherit;
-    box-sizing: content-box;
-    fill: currentColor;
+      .q-icon {
+        line-height: 1;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 1;
+        letter-spacing: 20px !important;
+        text-transform: none;
+        white-space: unset;
+        word-wrap: normal;
+        direction: ltr;
+        text-align: center;
+        position: inherit;
+        box-sizing: content-box;
+        fill: currentColor;
+}
+
+.q-page{
+   background-image: url('src/assets/IMG5.jpeg');
+   background-position: center;
+   background-repeat: no-repeat;
+     background-size: cover;
+   /* background-attachment: fixed; */
+
+  }
+
+@media(max-width: 500px) and (max-height: 900px){
+  .q-page{
+
+  }
 }
  </style>

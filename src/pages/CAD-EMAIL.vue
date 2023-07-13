@@ -5,19 +5,11 @@
       <label style="padding-bottom: 40px; font-size: 20px; font-family: The Old English;" class="column items-center">A SUA CONTA</label>
     <section class="login">
      <div class="q-pa-md" style="margin-bottom: 20px;">
-      <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold;" v-model="email" type="email" fill-mask="" placeholder="User" >
-          <template v-slot:append>
-          <q-icon name="person"
-            color="black" />
-        </template>
+      <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold; color: initial;" v-model="user" type="" fill-mask="" placeholder="User" >
       </q-input>
-         <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold;" v-model="email" type="email" fill-mask="" placeholder="E-mail" >
-          <template v-slot:append>
-          <q-icon name="email"
-            color="black" />
-        </template>
+         <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold; color: initial;" v-model="email" type="email" fill-mask="" placeholder="E-mail" >
       </q-input>
-      <q-input class="" rounded borderless input-style="font-weight: bold;" input-class="text-center" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="Password" >
+      <q-input class="" rounded borderless input-style="font-weight: bold; color: initial;" input-class="text-center"  :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="          Password" >
         <template v-slot:append>
           <q-icon
             :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -58,6 +50,7 @@ export default defineComponent({
   },
   setup (){
    return{
+      user: ref(''),
       email: ref(''),
       password: ref(''),
       isPwd: ref(true)
@@ -97,6 +90,7 @@ export default defineComponent({
           outline: 0 !important;
           -webkit-user-select: auto;
           user-select: auto;
+          color: gold;
       }
 
       .text-white {
@@ -118,6 +112,21 @@ export default defineComponent({
     position: inherit;
     box-sizing: content-box;
     fill: currentColor;
+}
+
+.q-page{
+   background-image: url('src/assets/IMG5.jpeg');
+   background-position: center;
+   background-repeat: no-repeat;
+     background-size: cover;
+   /* background-attachment: fixed; */
+
+  }
+
+@media(max-width: 500px) and (max-height: 900px){
+  .q-layout{
+
+  }
 }
 
  </style>

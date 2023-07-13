@@ -28,7 +28,5 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-   .layout{
-  background:gold;
-}
+
 </style>

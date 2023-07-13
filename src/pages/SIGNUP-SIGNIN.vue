@@ -1,13 +1,13 @@
 <template>
   <q-page class=" column items-center">
-    <div style="padding-top: 180px;">
+    <div style="padding-top: 150px;">
       <label style="font-size: 20px; font-family: The Old English;" class="column items-center">ENTRE OU CRIE</label>
       <label style="padding-bottom: 80px; font-size: 20px; font-family: The Old English;" class="column items-center">A SUA CONTA</label>
     <div class="flex flex-center">
        <section class="login">
 <div class="column items-center">
-  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important;" outline color="black" class="margem" @click= "irCadastroPrivado()" label="Sign Up"/>
-  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important;" outline color="black" class="margem" @click= "irLoginPrivado() " label="Login"/>
+  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important; color: gold;" outline class="margem" @click= "irCadastroPrivado()" label="Sign Up"/>
+  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important; color: gold;" outline  class="margem" @click= "irLoginPrivado() " label="Login"/>
 </div>
 </section>
       </div>
