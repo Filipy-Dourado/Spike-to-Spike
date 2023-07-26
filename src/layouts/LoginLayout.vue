@@ -28,5 +28,18 @@ export default defineComponent({
 })
 </script>
 <style scoped>
+.q-layout{
+   background-image: url('src/assets/IMG5.jpeg');
+   background-position: center;
+   background-repeat: no-repeat;
+     background-size: cover;
+   /* background-attachment: fixed; */
 
+  }
+
+@media(max-width: 500px) and (max-height: 900px){
+  .q-layout{
+
+  }
+}
 </style>

@@ -1,56 +1,62 @@
 <template>
   <q-page padding class="">
   <div class="column items-center">
+    <label style=" font-size: 30px; font-family: The Old English; margin-bottom: 40px; font-weight: bold;
+    margin-top: 25px;" class="column items-center">Ofertas</label>
     <div class="flex items-baseline">
-<div class="q-pa-md">
-    <q-checkbox
-      v-model="valo"
-      checked-icon="language"
-      unchecked-icon="language"
-    />
+      <q-btn-group push  style=" margin-bottom: 22px;">
+      <q-btn color="yellow" text-color="black" icon="language" push label="País"/>
+      <q-btn color="amber" text-color="black"  icon="shop" push label="Compra" />
+      <q-btn color="yellow" text-color="black" icon="sell" push label="Venda" />
+      <q-btn color="amber" text-color="black" icon="payment" push label="Pagamento"/>
+      <q-btn color="yellow" text-color="black" icon="timeline" push label="Destino" />
+    </q-btn-group>
   </div>
-  <div class="q-pa-md">
-    <q-checkbox
-      v-model="val"
-      checked-icon="settings"
-      unchecked-icon="settings"
-      color="black"
-    />
-  </div>
-  <div class="q-pa-md">
-    <q-checkbox
-      v-model="val"
-      checked-icon="star"
-      unchecked-icon="star_border"
-    />
-  </div>
-  <div class="q-pa-md">
-    <q-checkbox
-      v-model="val"
-      checked-icon="star"
-      unchecked-icon="star_border"
-    />
-  </div>
-  <div class="q-pa-md">
-    <q-checkbox
-      v-model="val"
-      checked-icon="star"
-      unchecked-icon="star_border"
-    />
-  </div>
-  <div class="q-pa-md">
-    <q-checkbox
-      v-model="val"
-      checked-icon="star"
-      unchecked-icon="star_border"
-    />
-  </div>
-   </div>
     </div>
 
     <div class="q-pa-md">
-    <q-list >
+    <q-list>
       <q-item>
+        <q-item-section side top>
+          <q-icon name="circle" color="green" />
+          <q-item-label caption> </q-item-label>
+        </q-item-section>
+        <q-item-section avatar>
+          <q-avatar style="font-size: 60px;">
+            <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+          </q-avatar>
+          <div v-if="user">
+            <q-item-label style="font-weight: bold;">{{ user.user_metadata.name }}</q-item-label>
+          </div>
+        </q-item-section>
+        <!-- <q-icon name="star" color="yellow" /> -->
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Sats</q-item-label>
+          <q-item-label> 120.000</q-item-label>
+          <q-item-label style="font-weight: bold;">BRL/BTC</q-item-label>
+          <q-item-label>350.000</q-item-label>
+
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Expiry</q-item-label>
+          <q-item-label> 3 hs</q-item-label>
+          <q-item-label style="font-weight: bold;">Bond</q-item-label>
+          <q-item-label> 5%</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Premium</q-item-label>
+          <q-item-label> 3%</q-item-label>
+          <q-item-label style="font-weight: bold;">Timer</q-item-label>
+          <q-item-label> 50 hs</q-item-label>
+        </q-item-section>
+      </q-item>
+    <q-separator spaced inset />
+
+    <q-item>
+      <q-item-section side top>
+          <q-icon name="circle" color="green" />
+          <q-item-label caption> </q-item-label>
+        </q-item-section>
         <q-item-section avatar>
           <q-avatar style="font-size: 60px;">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
@@ -58,8 +64,22 @@
         </q-item-section>
         <!-- <q-icon name="star" color="yellow" /> -->
         <q-item-section>
-          <q-item-label>Single line item</q-item-label>
-          <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+          <q-item-label style="font-weight: bold;">Sats</q-item-label>
+          <q-item-label> 120.000</q-item-label>
+          <q-item-label style="font-weight: bold;">BRL/BTC</q-item-label>
+          <q-item-label>350.000</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Expiry</q-item-label>
+          <q-item-label> 3 hs</q-item-label>
+          <q-item-label style="font-weight: bold;">Bond</q-item-label>
+          <q-item-label> 5%</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Premium</q-item-label>
+          <q-item-label> 3%</q-item-label>
+          <q-item-label style="font-weight: bold;">Timer</q-item-label>
+          <q-item-label> 50 hs</q-item-label>
         </q-item-section>
         <q-item-section side top>
           <q-item-label caption></q-item-label>
@@ -68,6 +88,10 @@
     <q-separator spaced inset />
 
     <q-item>
+      <q-item-section side top>
+          <q-icon name="circle" color="green" />
+          <q-item-label caption> </q-item-label>
+        </q-item-section>
         <q-item-section avatar>
           <q-avatar style="font-size: 60px;">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
@@ -75,15 +99,34 @@
         </q-item-section>
         <!-- <q-icon name="star" color="yellow" /> -->
         <q-item-section>
-          <q-item-label style="font-size: 20px;">20.500</q-item-label>
-          <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+          <q-item-label style="font-weight: bold;">Sats</q-item-label>
+          <q-item-label> 120.000</q-item-label>
+          <q-item-label style="font-weight: bold;">BRL/BTC</q-item-label>
+          <q-item-label>350.000</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Expiry</q-item-label>
+          <q-item-label> 3 hs</q-item-label>
+          <q-item-label style="font-weight: bold;">Bond</q-item-label>
+          <q-item-label> 5%</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Premium</q-item-label>
+          <q-item-label> 3%</q-item-label>
+          <q-item-label style="font-weight: bold;">Timer</q-item-label>
+          <q-item-label> 50 hs</q-item-label>
         </q-item-section>
         <q-item-section side top>
           <q-item-label caption></q-item-label>
         </q-item-section>
       </q-item>
     <q-separator spaced inset />
+
     <q-item>
+      <q-item-section side top>
+          <q-icon name="circle" color="green" />
+          <q-item-label caption> </q-item-label>
+        </q-item-section>
         <q-item-section avatar>
           <q-avatar style="font-size: 60px;">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
@@ -91,15 +134,34 @@
         </q-item-section>
         <!-- <q-icon name="star" color="yellow" /> -->
         <q-item-section>
-          <q-item-label>Single line item</q-item-label>
-          <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+          <q-item-label style="font-weight: bold;">Sats</q-item-label>
+          <q-item-label> 120.000</q-item-label>
+          <q-item-label style="font-weight: bold;">BRL/BTC</q-item-label>
+          <q-item-label>350.000</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Expiry</q-item-label>
+          <q-item-label> 3 hs</q-item-label>
+          <q-item-label style="font-weight: bold;">Bond</q-item-label>
+          <q-item-label> 5%</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Premium</q-item-label>
+          <q-item-label> 3%</q-item-label>
+          <q-item-label style="font-weight: bold;">Timer</q-item-label>
+          <q-item-label> 50 hs</q-item-label>
         </q-item-section>
         <q-item-section side top>
           <q-item-label caption></q-item-label>
         </q-item-section>
       </q-item>
     <q-separator spaced inset />
+
     <q-item>
+      <q-item-section side top>
+          <q-icon name="circle" color="green" />
+          <q-item-label caption> </q-item-label>
+        </q-item-section>
         <q-item-section avatar>
           <q-avatar style="font-size: 60px;">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
@@ -107,75 +169,73 @@
         </q-item-section>
         <!-- <q-icon name="star" color="yellow" /> -->
         <q-item-section>
-          <q-item-label>Single line item</q-item-label>
-          <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+          <q-item-label style="font-weight: bold;">Sats</q-item-label>
+          <q-item-label> 120.000</q-item-label>
+          <q-item-label style="font-weight: bold;">BRL/BTC</q-item-label>
+          <q-item-label>350.000</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Expiry</q-item-label>
+          <q-item-label> 3 hs</q-item-label>
+          <q-item-label style="font-weight: bold;">Bond</q-item-label>
+          <q-item-label> 5%</q-item-label>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label style="font-weight: bold;">Premium</q-item-label>
+          <q-item-label> 3%</q-item-label>
+          <q-item-label style="font-weight: bold;">Timer</q-item-label>
+          <q-item-label> 50 hs</q-item-label>
         </q-item-section>
         <q-item-section side top>
           <q-item-label caption></q-item-label>
         </q-item-section>
       </q-item>
-    <q-separator spaced inset />
+      <q-separat spaced inset />
     </q-list>
+
   </div>
-
-    <!-- <div class="column items-center">
-      <div class=" flex items-baseline">
-    <fieldset class="login">
-    </fieldset>
-      </div>
-      </div> -->
-
-
-  </q-page>
+</q-page>
 </template>
 
 <script>
 import { defineComponent, ref } from 'vue'
+import useAuthUser from 'src/composables/UseAuthUser'
+
 // import router from './router'
 
 export default defineComponent({
-  data: function(){
-  return{
- val: ref(true),
- valo: ref(true)
-  }
+  data (){
+   return
 
  },
- methods: {
 
- },
   name: 'HOME',
   setup (){
+ const {user} = useAuthUser()
 
+
+ return {
+  user,
   }
+ },
 
 })
 
 </script>
 
 <style scoped>
-.card{
-  width: 150px;
-  height: 250px;
-  border-color: black;
+.q-toolbar{
+  width:auto;
 }
-.margem{
-  margin-left: 10px;
-  border-color:black;
-}
-.alinhar{
-        text-align: center;
-      }
-      .login{
-        background-color: white ;
-        width: 150px;
-        height: 230px;
-        border-radius: 20px;
-        border-color: #1976D2;
-        margin-bottom: 50px;
-      }
+     .q-item{
+      cursor: pointer;
+     }
 
-      fieldset{
-        padding-top: 25px;
+
+      @media(max-width: 390px){
+        .q-btn{
+          width: 75px;
+        }
+
       }
  </style>

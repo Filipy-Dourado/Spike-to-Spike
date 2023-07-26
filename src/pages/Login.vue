@@ -3,11 +3,15 @@
     <div>
       <label style="font-size: 20px; font-family: The Old English;" class="column items-center">VOCÊ ESTÁ ENTRANDO</label>
       <label style="padding-bottom: 40px; font-size: 20px; font-family: The Old English;" class="column items-center">EM SUA CONTA</label>
-    <section class="login">
+    <q-form class="login" @submit.prevent="handleLogin">
      <div class="q-pa-md" style="margin-bottom: 20px;">
-      <q-input  class="margem"  rounded borderless input-class="text-center" input-style="font-weight: bold;" v-model="email" type="email" fill-mask="" placeholder="Usuário ou E-mail" >
+      <q-input  class="margem"  rounded borderless input-class="text-center"
+        input-style="font-weight: bold;" v-model="form.email"
+        type="email" fill-mask="" placeholder="E-mail">
       </q-input>
-      <q-input class="" rounded borderless input-style="font-weight: bold;" input-class="text-center" :type="isPwd ? 'password' : 'text'" v-model="Senha" name="f-senha" placeholder="      Password" >
+      <q-input  rounded borderless input-style="font-weight: bold;" input-class="text-center"
+       :type="isPwd ? 'password' : 'text'" v-model="form.password"
+       name="f-senha" placeholder="        Password" >
         <template v-slot:append>
           <q-icon
             :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -19,12 +23,14 @@
       </q-input>
         </div>
       <div class="relative-position q-pa-md">
-        <q-btn style="font-family: 'Times New Roman', Times, serif; font-weight: bold;" rounded class="absolute-center" @click="irHome()" color="black" label="Entrar"/>
+        <q-btn style="font-family: 'Times New Roman', Times, serif; font-weight: bold;"
+            rounded class="absolute-center" color="black" label="Entrar" type="submit"/>
       </div>
-      <div class=" flex flex-center" style="margin-top: 10px;">
-        <a class="aprenda" style="opacity: 0.9;font-size: 15px;" @click="novaSenha()"><q-icon  style="opacity: 0.9;" class="fa-regular fa-circle-question" size="20px"/> Aprenda a diferença.</a>
+      <div class=" flex flex-center q-mt-md">
+        <a class="aprenda " style="opacity: 0.9;font-size: 15px;" @click="novaSenha()"><q-icon
+        style="opacity: 0.9;" class="fa-regular fa-circle-question" size="20px"/>Recuperar senha</a>
         </div>
-      </section>
+      </q-form>
   </div>
   </q-page>
 </template>
@@ -32,29 +38,47 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import { useQuasar } from 'quasar';
-// import router from './router'
+import useAuthUser from 'src/composables/UseAuthUser';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
-  data() {
-    return{
-    }
+  data: function(){
+  return{
+  }
 
-  },
+ },
 
-  name: 'CAD-EMAIL',
+  name: 'LOGIN',
   methods:{
   novaSenha(){
     this.$router.push('/nova-senha')
-  },
-  irHome(){
-    this.$router.replace('/home')
-  }
+   },
+
   },
   setup (){
+   const form = ref({
+    email: '',
+    password: ''
+})
+   const router = useRouter ()
+
+   const {login} = useAuthUser ()
+
+
+
+   const handleLogin = async () => {
+     try {
+      await login(form.value)
+         router.push({ name: 'home' })
+     } catch (error) {
+      alert(error.message)
+     }
+   }
+
    return{
-      email: ref(''),
-      password: ref(''),
-      isPwd: ref(true)
+      form ,
+      isPwd: ref(true),
+      handleLogin
    }
   }
 
@@ -76,7 +100,7 @@ export default defineComponent({
         }
 
         .aprenda{
-          color: gold;
+          color: black;
           cursor: pointer;
           font-size: 11px;
         }

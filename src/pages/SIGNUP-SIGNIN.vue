@@ -6,8 +6,14 @@
     <div class="flex flex-center">
        <section class="login">
 <div class="column items-center">
-  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important; color: gold;" outline class="margem" @click= "irCadastroPrivado()" label="Sign Up"/>
-  <q-btn style="width: 150px; font-family: times 'Times New Roman', Times, serif; text-transform: unset !important; color: gold;" outline  class="margem" @click= "irLoginPrivado() " label="Login"/>
+
+  <q-btn style="width: 150px; font-family: times 'Times New Roman',
+  Times, serif; text-transform: unset !important;" outline  label="Sign up"
+  class="margem" @click= "irCadastro()"/>
+
+  <q-btn style="width: 150px; font-family: times 'Times New Roman',
+  Times, serif; text-transform: unset !important;" outline
+  class="margem" @click= "irLogin() " label="Login"/>
 </div>
 </section>
       </div>
@@ -29,11 +35,11 @@ export default defineComponent({
 
   name: 'SINGUP-SINGIN',
   methods:{
-    irCadastroPrivado(){
-    this.$router.push('/cadastro-privado')
+    irCadastro(){
+     this.$router.push('/cadastro')
  },
- irLoginPrivado(){
-    this.$router.push('/login-privado')
+    irLogin(){
+     this.$router.push('/login')
  },
 
  }
@@ -42,6 +48,7 @@ export default defineComponent({
 </script>
 
   <style scoped>
+
         .login{
           width: 250px;
           height: 300px;
