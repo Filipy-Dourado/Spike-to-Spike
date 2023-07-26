@@ -20,7 +20,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/HomeLayout.vue'),
     children: [
-      { path: 'home', name: 'home', component: () => import('src/pages/Home.vue') },
+      // { path: 'home', name: 'home', component: () => import('src/pages/Home.vue') },
 
     ],
     // meta: {
