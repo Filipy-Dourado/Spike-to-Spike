@@ -11,7 +11,8 @@ const routes = [
       { path: 'escolha', name:'escolha', component: () => import('src/pages/ESCOLHA.vue') },
       { path: 'signin', name: 'signin', component: () => import('src/pages/SIGNUP-SIGNIN.vue') },
       { path: 'email-confirmation', name: 'email-confirmation', component: () => import('src/pages/VERIFICAREMAIL.vue') },
-      { path: 'nova-senha', name: 'nova-senha', component: () => import('src/pages/RecuperarSenha.vue') },
+      { path: 'recuperar-senha', name: 'recuperar-senha', component: () => import('src/pages/RecuperarSenha.vue') },
+      { path: 'nova-senha', name: 'nova-senha', component: () => import('src/pages/NovaSenha.vue') },
 
     ]
   },
@@ -20,20 +21,23 @@ const routes = [
     path: '/',
     component: () => import('layouts/HomeLayout.vue'),
     children: [
-      // { path: 'home', name: 'home', component: () => import('src/pages/Home.vue') },
+      { path: 'home', name: 'home', component: () => import('src/pages/Home.vue') },
+      { path: 'criar-oferta', name: 'criar-oferta', component: () => import('src/pages/CriarOferta.vue') },
+      { path: 'chart', name: 'chart', component: () => import('src/pages/Chart.vue') },
+      { path: 'idioma', name: 'idioma', component: () => import('src/pages/Idioma.vue') },
 
     ],
     // meta: {
     //   requiresAuth: true
-    // }
-  },
+    },
+
 
 
   // {
-  //   path: '/Home',
+  //   path: '/',
   //   component: () => import('layouts/MainLayout.vue'),
   //   children: [
-  //     { path: '', component: () => import('pages/LOGIN.vue') }
+
   //   ]
   // },
 

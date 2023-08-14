@@ -4,7 +4,7 @@
     <label style=" font-size: 30px; font-family: The Old English; margin-bottom: 40px; font-weight: bold;
     margin-top: 25px;" class="column items-center">Ofertas</label>
     <div class="flex items-baseline">
-      <q-btn-group push  style=" margin-bottom: 22px;">
+      <q-btn-group flat style=" margin-bottom: 22px;">
       <q-btn color="yellow" text-color="black" icon="language" push label="País"/>
       <q-btn color="amber" text-color="black"  icon="shop" push label="Compra" />
       <q-btn color="yellow" text-color="black" icon="sell" push label="Venda" />
@@ -26,7 +26,7 @@
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
           </q-avatar>
           <div v-if="user">
-            <q-item-label style="font-weight: bold;">{{ user.user_metadata.name }}</q-item-label>
+            <q-item-label style="font-weight: bold;">{{user.user_metadata.name}}</q-item-label>
           </div>
         </q-item-section>
         <!-- <q-icon name="star" color="yellow" /> -->
@@ -192,7 +192,14 @@
       </q-item>
       <q-separat spaced inset />
     </q-list>
-
+    <q-footer class="column items-center" style="background-color: transparent; position: fixed; " >
+        <q-toolbar class="flex flex-center">
+        <q-btn-group push  >
+        <q-btn  color="yellow" text-color="black" icon="light" push label="Criar Oferta" :to="{name:'criar-oferta'}" />
+        <q-btn color="amber" text-color="black" icon="timeline" push label="Chart" :to="{name:'chart'}"/>
+        </q-btn-group>
+        </q-toolbar>
+      </q-footer>
   </div>
 </q-page>
 </template>

@@ -15,7 +15,7 @@
          </q-item>
          <q-item clickable v-close-popup >
           <q-item-section>
-            <q-item-label>Configurações</q-item-label>
+            <q-item-label>Idioma</q-item-label>
           </q-item-section>
         </q-item>
         <q-item   clickable v-close-popup >
@@ -29,14 +29,7 @@
         </q-toolbar>
       </q-header>
 
-      <q-footer class="column items-center" style="background-color: transparent; position: fixed; " >
-        <q-toolbar class="flex flex-center">
-        <q-btn-group push  >
-        <q-btn  color="yellow" text-color="black" icon="light" push label="Criar Oferta"/>
-        <q-btn color="amber" text-color="black" icon="timeline" push label="Chart" />
-        </q-btn-group>
-        </q-toolbar>
-      </q-footer>
+
 
       <q-page-container>
         <router-view />
@@ -85,10 +78,11 @@ export default defineComponent({
 
 <style scoped>
 .q-layout{
-   background-image: url('src/assets/IMG3.jpeg');
+
+   /* background-image: url('src/assets/IMG3.jpeg'); */
    background-position: center;
    background-repeat: no-repeat;
-   background-size: cover;
+   background-size: auto;
 
   }
 

@@ -1,5 +1,6 @@
 <template>
   <q-page class="flex flex-center">
+    <div>
       <label style="font-size: 20px; font-family: The Old English;" class="column items-center">VOCÊ ESTÁ CADASTRANDO</label>
       <label style="padding-bottom: 40px; font-size: 20px; font-family: The Old English;" class="column items-center">A SUA CONTA</label>
 
@@ -32,6 +33,8 @@
       <div class=" flex flex-center" style="margin-top: 30px;">
         </div>
       </q-form>
+    </div>
+
   </q-page>
 </template>
 

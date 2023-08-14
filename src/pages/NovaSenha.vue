@@ -1,21 +1,27 @@
 <template>
   <q-page class="column items-center">
    <div style="padding-top: 180px;">
-    <label style=" font-size: 20px; font-family: The Old English; padding-bottom: 40px;" class="column items-center">SOLICITE UMA NOVA SENHA</label>
-    <q-form class="login" @submit.prevent="handleForgot">
+    <q-form class="login" @submit.prevent="handleReset">
+     <label style=" font-size: 20px; font-family: The Old English; padding-bottom: 40px;" class="column items-center">DIGITE SUA NOVA SENHA</label>
 
-     <div class="q-pa-md">
-      <q-input rounded borderless input-class="text-center"
-        input-style="font-weight: bold;" v-model="email"
-        type="email" fill-mask="" placeholder="E-mail">
+    <div class="q-pa-md">
+      <q-input  rounded borderless input-style="font-weight: bold;" input-class="text-center"
+       :type="isPwd ? 'password' : 'text'" v-model="password"
+       name="f-senha"  placeholder="        Password" >
+        <template v-slot:append>
+          <q-icon
+            :name="isPwd ? 'visibility_off' : 'visibility'"
+            class="cursor-pointer"
+            color="black"
+            @click="isPwd = !isPwd"
+          />
+        </template>
       </q-input>
 
         </div>
       <div class="q-pa-md column items-center"  >
         <q-btn style="font-family: 'Times New Roman', Times, serif; font-weight: bold;"
-            rounded color="black" label="Solicitar" type="submit"/>
-            <q-btn flat style="font-family: 'Times New Roman', Times, serif; font-weight: bold;"
-            rounded class="q-pt-md" color="black" label="Voltar para Login" :to="{name: 'login'}" />
+            rounded color="black" label="Confirmar" type="submit"/>
       </div>
       </q-form>
   </div>
@@ -25,30 +31,43 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import useAuthUser from 'src/composables/UseAuthUser'
-
+import { useRouter , useRoute} from 'vue-router'
 
 export default defineComponent({
+  data (){
+  return{
+    isPwd: ref(true),
+  }
 
- name: 'RECUPERARSENHA',
+ },
+
+ name: 'NOVASENHA',
 
   setup (){
 
-    const {sendPasswordRestEmail} = useAuthUser()
+    const {resetPassword} = useAuthUser()
 
-    const email = ref('')
+    const router = useRouter()
 
-    const handleForgot = async () => {
+    const route = useRoute()
+
+    const token = route.query.token
+
+
+    const password = ref('')
+
+    const handleReset = async () => {
       try {
-        await sendPasswordRestEmail(email.value)
-        alert(`Password reset email sent to: ${email.value}`)
+        await resetPassword(token, password.value)
+        router.push({name: 'login'})
       } catch (error) {
         alert(error.message)
       }
     }
 
     return{
-     email,
-     handleForgot
+     password,
+     handleReset
     }
   }
 

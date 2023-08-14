@@ -7,8 +7,9 @@
      <div class="q-pa-md" style="margin-bottom: 20px;">
       <q-input  class="margem"  rounded borderless input-class="text-center"
         input-style="font-weight: bold;" v-model="form.email"
-        type="email" fill-mask="" placeholder="E-mail">
+        type="email" placeholder="E-mail">
       </q-input>
+
       <q-input  rounded borderless input-style="font-weight: bold;" input-class="text-center"
        :type="isPwd ? 'password' : 'text'" v-model="form.password"
        name="f-senha" placeholder="        Password" >
@@ -51,7 +52,7 @@ export default defineComponent({
   name: 'LOGIN',
   methods:{
   novaSenha(){
-    this.$router.push('/nova-senha')
+    this.$router.push('/recuperar-senha')
    },
 
   },
@@ -105,14 +106,17 @@ export default defineComponent({
           font-size: 11px;
         }
 
-      .q-input {
+      .q-input{
         border-radius: 20px;
         border: 2px solid black;
         font-family: 'Times New Roman', Times, serif;
         font-size: 17px;
         min-width: 100px;
+        background-color: -internal-light-transparent !important;
 
-      }
+}
+
+
        .q-field__input {
           width: 100%;
           text-align: center;
@@ -142,6 +146,7 @@ export default defineComponent({
         box-sizing: content-box;
         fill: currentColor;
 }
+
 
 .q-page{
    background-image: url('src/assets/IMG5.jpeg');

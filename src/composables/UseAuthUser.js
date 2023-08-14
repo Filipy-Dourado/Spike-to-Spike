@@ -14,6 +14,8 @@ export default function useAuthUser () {
    */
   const login = async ({ email, password }) => {
     const { user, error } = await supabase.auth.signInWithPassword({ email, password })
+    console.log(user)
+    console.log(error)
     if (error) throw error
     return user
   }
@@ -30,12 +32,14 @@ export default function useAuthUser () {
     return !! user.value
   }
 
+
+
   /**
    * Register
    */
-  const register = async ({ name, email, password, ...meta }) => {
+  const register = async ({username, email, password, ...meta }) => {
     const { user, error } = await supabase.auth.signUp(
-      { name, email, password },
+      {username, email, password },
       {
         // arbitrary meta data is passed as the second argument under a data key
         // to the Supabase signUp method
@@ -63,17 +67,17 @@ export default function useAuthUser () {
    * (ie. support "Forgot Password?")
    */
     const sendPasswordRestEmail = async (email) => {
-    const { user, error } = await supabase.auth.resetPasswordForEmail(email)
-    if (error) throw error
-    return user
-  }
+
+      const {user, error }  = await supabase.auth.resetPasswordForEmail(email)
+     // console.log(user)
+      if (error) throw error
+      return user
+    }
 
   const resetPassword = async (accessToken, newPassword) => {
-    const { user, error } = await supabase.auth.api.updateUser(
-      accessToken,
-      { password: newPassword }
-    )
-    if (error) throw error
+    const { user, error } = await supabase.auth.updateUser(accessToken, newPassword)
+    // console.log(user)
+   if (error) throw error
     return user
   }
 
