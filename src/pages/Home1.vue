@@ -405,7 +405,7 @@ export default defineComponent({
 
  },
 
-  name: 'HOME',
+  name: 'HOME1',
 
   methods:{
     irOferta(){
