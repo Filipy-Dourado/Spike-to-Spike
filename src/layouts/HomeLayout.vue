@@ -9,16 +9,21 @@
       <q-btn-dropdown flat   color="yellow" icon="person" text-color="black">
       <q-list>
         <q-item clickable v-close-popup >
-          <q-item-section>
+          <q-item-section @click="IrHome()">
+            <q-item-label>Ofertas</q-item-label>
+          </q-item-section>
+         </q-item>
+        <q-item clickable v-close-popup >
+          <q-item-section @click="IrUsuário()">
             <q-item-label>Área do usuário</q-item-label>
           </q-item-section>
          </q-item>
          <q-item clickable v-close-popup >
-          <q-item-section>
+          <q-item-section @click="irIdioma()">
             <q-item-label>Idioma</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item   clickable v-close-popup >
+        <q-item clickable v-close-popup >
           <q-item-section>
             <q-item-label @click="handleLogout" >Sair</q-item-label>
           </q-item-section>
@@ -27,6 +32,7 @@
         </q-btn-dropdown>
 
         </q-toolbar>
+
       </q-header>
 
 
@@ -38,10 +44,7 @@
 </template>
 <script>
 import { defineComponent, ref } from 'vue';
-import useAuthUser from 'src/composables/UseAuthUser';
-import {useRouter} from 'vue-router';
-import { useQuasar } from 'quasar';
-import router from 'src/router';
+
 
 export default defineComponent({
 
@@ -49,28 +52,23 @@ export default defineComponent({
 
   setup () {
 
-   const $q = useQuasar ()
 
-   const router = useRouter()
+  },
 
-   const {logout} = useAuthUser ()
+  methods:{
 
-   const handleLogout = async () => {
-    $q.dialog({
-      title: 'Sair da Ratel',
-      message: 'Tem certeza que deseja deslogar da sua conta?',
-      cancel: true,
-      persistent: true
-    }).onOk (async () => {
-       await logout()
-       router.replace({name: 'login'})
-    })
-   }
-    return {
-    handleLogout
-   }
+  irIdioma(){
+  this.$router.push('/idioma')
+ },
+
+  IrUsuário(){
+    this.$router.push('/area-do-usuario')
+  },
+
+  IrHome(){
+    this.$router.push('/home')
   }
-
+}
 
 
 })

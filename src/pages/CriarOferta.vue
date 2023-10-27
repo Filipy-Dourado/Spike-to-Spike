@@ -1,17 +1,18 @@
 <template>
   <q-page class="column items-center">
    <div style="padding-top: 150px;">
-    <q-form class="login" @submit.prevent="">
+    <q-form class="login">
       <label style=" font-size: 20px; font-family: The Old English; padding-bottom: 40px;" class="column items-center">CRIE A SUA OFERTA</label>
       <div class="q-mb-md column items-center">
        <q-option-group class="" v-model="group" :options="option" color="black"
          style="font-weight: bold; font-size: 18px;" inline />
   </div>
 
+
         <div class="q-pa-md">
-        <div class=" q-mt-md row flex-center">
-          <q-input class="q-mr-md" rounded borderless input-style="font-weight: bold;" input-class="text-center"
-              v-model="quantidade"  mask="#######" name="f-quantidade" placeholder="   Quantidade" >
+          <div class=" q-mt-md">
+          <q-input class="" rounded borderless input-style="font-weight: bold;" input-class="text-center"
+              v-model="quantidade"  mask="#" reverse-fill-mask="" name="f-quantidade" placeholder="   Quantidade" >
             <template v-slot:append >
             <q-icon name="money"/>
             </template>
@@ -20,8 +21,10 @@
             </template>
           </q-input>
 
-         <q-select v-model="model2" use-input use-chips label="Moeda" input-debounce="0"
-          color="black" :options="options" @filter="filterFn" rounded borderless type="" >
+            </div>
+        <div class=" q-mt-md row flex-center">
+          <q-select v-model="model2" use-input use-chips label="Moeda" input-debounce="0"
+          color="black" :options="options" @filter="filterFn" rounded borderless type="" class="q-mr-md">
           <template v-slot:no-option>
           <q-item>
             <q-item-section class="text-grey">
@@ -29,12 +32,54 @@
             </q-item-section>
           </q-item>
         </template>
+        <template v-slot:selected-item="scope">
+          <q-chip
+            removable
+            dense
+            @remove="scope.removeAtIndex(scope.index)"
+            :tabindex="scope.tabindex"
+            color="white"
+            text-color="black"
+            size="15px"
+            class="q-ma-none"
+          >
+            <q-avatar>
+              <q-img :src="scope.opt.icon" loading="lazy" height="28px" style="max-width: 20px;" />
+            </q-avatar>
+            {{ scope.opt.label }}
+          </q-chip>
+        </template>
         </q-select>
+
+          <q-select class="" v-model="model3" use-input use-chips input-debounce="0" label="Prêmio"
+           color="black" :options="options3" @filter="filterFn" rounded borderless suffix="%" >
+           <template v-slot:no-option>
+          <q-item>
+            <q-item-section class="text-grey">
+              No results
+            </q-item-section>
+          </q-item>
+        </template>
+        <template v-slot:selected-item="scope">
+          <q-chip
+            removable
+            dense
+            @remove="scope.removeAtIndex(scope.index)"
+            :tabindex="scope.tabindex"
+            color="white"
+            text-color="black"
+            size="15px"
+            class="q-ma-none"
+          >
+            {{ scope.opt.label }}
+          </q-chip>
+        </template>
+          </q-select>
         </div>
 
         <div class="q-mt-md">
-          <q-select class="" v-model="model" use-input use-chips multiple input-debounce="0" label="Método de pagamento"
-            color="black" @new-value="createValue" :options="options" @filter="filterFn" rounded borderless>
+          <q-select class="" v-model="model" use-input multiple input-debounce="0" label="Método de pagamento"
+            color="black" @new-value="createValue" :options="options2" @filter="filterFn" rounded borderless max-values="4" >
             <template v-slot:no-option>
              <q-item>
               <q-item-section class="text-grey">
@@ -42,34 +87,29 @@
             </q-item-section>
           </q-item>
         </template>
+        <template v-slot:selected-item="scope">
+          <q-chip
+            removable
+            dense
+            @remove="scope.removeAtIndex(scope.index)"
+            :tabindex="scope.tabindex"
+            color="white"
+            text-color="black"
+            size="18px"
+            class="q-ma-none"
+          >
+            <q-avatar>
+              <q-img :src="scope.opt.icon" height="28px" style="max-width: 20px;" />
+            </q-avatar>
+            {{ scope.opt.label }}
+          </q-chip>
+        </template>
           </q-select>
         </div>
 
 
 
-        <div class=" q-mt-md row flex-center">
-         <q-select class="q-mr-md" v-model="model3" use-input use-chips input-debounce="0" label="Prêmio"
-           color="black" :options="options" @filter="filterFn" rounded borderless suffix="%" >
-           <template v-slot:no-option>
-          <q-item>
-            <q-item-section class="text-grey">
-              No results
-            </q-item-section>
-          </q-item>
-        </template>
-          </q-select>
-        <q-select class="" v-model="model4" use-input use-chips input-debounce="0" label="Bond"
-           color="black" :options="options" @filter="filterFn" rounded borderless suffix="%">
-           <template v-slot:no-option>
-          <q-item>
-            <q-item-section class="text-grey">
-              No results
-            </q-item-section>
-          </q-item>
-        </template>
-          </q-select>
 
-      </div>
 
         <div class="q-mt-md row">
 
@@ -144,9 +184,203 @@ import { useRouter , useRoute} from 'vue-router'
 
 
  const stringOptions = [
-  'Google', 'Facebook', 'Twitter', 'Apple', 'Oracle'
+ {
+          label: 'USD',
+          icon: ''
+        },
+        {
+          label: 'BRL',
+          icon: ''
+        },
+        {
+          label: 'EUR',
+          icon: ''
+        },
+        {
+          label: 'JPY',
+          icon: ''
+        },
+        {
+          label: 'GBP',
+          icon: ''
+        },
+        {
+          label: 'AUD',
+          icon: ''
+        },
+        {
+          label: 'CAD',
+          icon: ''
+        },
+        {
+          label: 'CHF',
+          icon: ''
+        },
+        {
+          label: 'CNY',
+          icon: ''
+        },
+        {
+          label: 'HKF',
+          icon: ''
+        },
+        {
+          label: 'NZD',
+          icon: ''
+        },
+        {
+          label: 'SEC',
+          icon: ''
+        },
+        {
+          label: 'KRW',
+          icon: ''
+        },
+        {
+          label: 'SGD',
+          icon: ''
+        },
+        {
+          label: 'NOK',
+          icon: ''
+        },
+        {
+          label: 'MXN',
+          icon: ''
+        },
+        {
+          label: 'RUB',
+          icon: ''
+        },
+        {
+          label: 'ZAR',
+          icon: ''
+        },
+        {
+          label: 'TRY',
+          icon: ''
+        },
+        {
+          label: 'CLP',
+          icon: ''
+        },
+        {
+          label: 'CZK',
+          icon: ''
+        },
+        {
+          label: 'DKK',
+          icon: ''
+        },
+        {
+          label: 'HRK',
+          icon: ''
+        },
+        {
+          label: 'HUF',
+          icon: ''
+        },
+        {
+          label: 'INR',
+          icon: ''
+        },
+        {
+          label: 'ISK',
+          icon: ''
+        },
+        {
+          label: 'PLN',
+          icon: ''
+        },
+        {
+          label: 'RON',
+          icon: ''
+        },
+        {
+          label: 'ARS',
+          icon: ''
+        },
+        {
+          label: 'VES',
+          icon: ''
+        },
+        {
+          label: 'COP',
+          icon: ''
+        },
+        {
+          label: 'PEN',
+          icon: ''
+        },
+        {
+          label: 'UYU',
+          icon: ''
+        },
+        {
+        label: 'PYG',
+        icon: ''
+        },
 
 ]
+
+ const options2 = [
+        {
+          label: 'Pix',
+          icon: 'https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png'
+        },
+        {
+          label: 'Visa',
+          icon: 'src/assets/PAGAMENTOS/Visa.jpeg'
+        },
+        {
+          label: 'Boleto',
+          icon: 'map'
+        },
+        {
+          label: 'PicPay',
+          icon: 'golf_course'
+        },
+        {
+          label: 'PayPal',
+          icon: 'https://logodownload.org/wp-content/uploads/2014/10/paypal-logo-0.png'
+        },
+        {
+          label: 'USDT',
+          icon: 'casino'
+        },
+        {
+          label: 'Monero',
+          icon: 'casino'
+        },
+        {
+          label: 'Revolut',
+          icon: 'https://1000logos.net/wp-content/uploads/2022/08/Revolut-Symbol.png'
+        }
+
+      ]
+      const options3 = [
+        {
+          label: '1'
+
+        },
+        {
+          label: '2'
+        },
+        {
+          label: '3'
+        },
+        {
+          label: '4',
+
+        },
+        {
+          label: '5'
+        },
+        {
+          label: '6'
+        }
+      ]
+
 
 export default defineComponent({
 
@@ -165,17 +399,17 @@ export default defineComponent({
 
 
     return {
-      model: ref(null), options, model2: ref(null),
+      model: ref(null), options, options2, options3, model2: ref(null),
       model3: ref(null), model4: ref(null), time,
-      time2, proxyTime, proxyTime2, icon: ref(false), quantidade: ref(''),
+      time2, proxyTime, proxyTime2, icon: ref(false), quantidade: ref(null),
       group: ref('op1'),
 
       hourOptionsTime1: [ 1, 2, 3, 4, 5, 6],
 
-
     //  optionsFnTime (hr) {
     //     return hr <= 6
     //   },
+
 
 
 option: [
@@ -245,7 +479,7 @@ option: [
 <style scoped>
 
    .login{
-        width: 330px;
+        width: 380px;
         height: 650px;
         border-color: transparent;
         background-color: gold;

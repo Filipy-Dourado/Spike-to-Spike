@@ -3,9 +3,9 @@
     <div>
       <label style="font-size: 20px; font-family: The Old English;" class="column items-center">VOCÊ ESTÁ ENTRANDO</label>
       <label style="padding-bottom: 40px; font-size: 20px; font-family: The Old English;" class="column items-center">EM SUA CONTA</label>
-    <q-form class="login" @submit.prevent="handleLogin">
+    <q-form class="login">
      <div class="q-pa-md" style="margin-bottom: 20px;">
-      <q-input  class="margem"  rounded borderless input-class="text-center"
+      <q-input  class="margem" borderless input-class="text-center"
         input-style="font-weight: bold;" v-model="form.email"
         type="email" placeholder="E-mail">
       </q-input>
@@ -25,7 +25,7 @@
         </div>
       <div class="relative-position q-pa-md">
         <q-btn style="font-family: 'Times New Roman', Times, serif; font-weight: bold;"
-            rounded class="absolute-center" color="black" label="Entrar" type="submit"/>
+            rounded class="absolute-center" color="black" label="Entrar"/>
       </div>
       <div class=" flex flex-center q-mt-md">
         <a class="aprenda " style="opacity: 0.9;font-size: 15px;" @click="novaSenha()"><q-icon
@@ -39,12 +39,12 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import { useQuasar } from 'quasar';
-import useAuthUser from 'src/composables/UseAuthUser';
 import { useRouter } from 'vue-router';
 
 export default defineComponent({
   data: function(){
   return{
+    isPwd: ref(true),
   }
 
  },
@@ -61,25 +61,10 @@ export default defineComponent({
     email: '',
     password: ''
 })
-   const router = useRouter ()
 
-   const {login} = useAuthUser ()
-
-
-
-   const handleLogin = async () => {
-     try {
-      await login(form.value)
-         router.push({ name: 'home' })
-     } catch (error) {
-      alert(error.message)
-     }
-   }
 
    return{
-      form ,
-      isPwd: ref(true),
-      handleLogin
+    form
    }
   }
 
@@ -97,7 +82,6 @@ export default defineComponent({
 
       .margem{
           margin-bottom: 30px;
-
         }
 
         .aprenda{
@@ -112,7 +96,6 @@ export default defineComponent({
         font-family: 'Times New Roman', Times, serif;
         font-size: 17px;
         min-width: 100px;
-        background-color: -internal-light-transparent !important;
 
 }
 

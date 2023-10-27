@@ -25,7 +25,6 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import useAuthUser from 'src/composables/UseAuthUser'
 import { useRouter , useRoute} from 'vue-router'
 
 const stringOptions = ['PT-BR','EN-US']

@@ -14,6 +14,7 @@ const routes = [
       { path: 'recuperar-senha', name: 'recuperar-senha', component: () => import('src/pages/RecuperarSenha.vue') },
       { path: 'nova-senha', name: 'nova-senha', component: () => import('src/pages/NovaSenha.vue') },
 
+
     ]
   },
 
@@ -21,10 +22,13 @@ const routes = [
     path: '/',
     component: () => import('layouts/HomeLayout.vue'),
     children: [
-      // { path: 'home', name: 'home', component: () => import('src/pages/Home.vue') },
+      { path: 'home', name: 'home', component: () => import('src/pages/Home.vue') },
       { path: 'criar-oferta', name: 'criar-oferta', component: () => import('src/pages/CriarOferta.vue') },
       { path: 'chart', name: 'chart', component: () => import('src/pages/Chart.vue') },
       { path: 'idioma', name: 'idioma', component: () => import('src/pages/Idioma.vue') },
+      { path: 'area-do-usuario', name: 'area-do-usuario', component: () => import('src/pages/ÁreaUsuário.vue') },
+      { path: 'negociacao', name: 'negociacao', component: () => import('src/pages/Negociação.vue') },
+      { path: 'scrow', name: 'scrow', component: () => import('src/pages/Scrow.vue') },
 
     ],
     // meta: {
