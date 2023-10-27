@@ -23,6 +23,7 @@ const routes = [
     component: () => import('layouts/HomeLayout.vue'),
     children: [
       // { path: 'home', name: 'home', component: () => import('src/pages/Home.vue') },
+      { path: 'home', name: 'home', component: () => import('src/pages/Home1.vue') },
       { path: 'criar-oferta', name: 'criar-oferta', component: () => import('src/pages/CriarOferta.vue') },
       { path: 'chart', name: 'chart', component: () => import('src/pages/Chart.vue') },
       { path: 'idioma', name: 'idioma', component: () => import('src/pages/Idioma.vue') },
